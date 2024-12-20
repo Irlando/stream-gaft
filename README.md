@@ -1,21 +1,25 @@
-# Streaming Platform
+# LiveStream Platform
 
-A modern streaming platform that allows users to share and monetize their content globally.
+A modern streaming platform built with React, TypeScript, and Tailwind CSS that allows content creators to host and monetize their live streams.
 
 ## Features
 
-- User authentication (login/signup)
-- Stream management (create, delete)
-- Subscription plans
-- Geographic restrictions
-- Subscriber-only content
+- 🎥 Stream Integration with YouTube and Twitch
+- 💰 Flexible Pricing Options (One-time & Subscription)
+- 👥 User Authentication & Authorization
+- 📊 Dashboard for Content Creators
+- 🎨 Modern UI with Tailwind CSS and shadcn/ui
+- 📱 Fully Responsive Design
 
-## Demo Account
+## Tech Stack
 
-Use these credentials to test the platform:
-
-- Email: `demo@gaft.cv`
-- Password: `demo123456`
+- **Frontend Framework**: React with TypeScript
+- **Routing**: React Router v6
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **State Management**: Zustand
+- **Form Handling**: React Hook Form + Zod
+- **Icons**: Lucide React
 
 ## Getting Started
 
@@ -29,39 +33,51 @@ Use these credentials to test the platform:
    npm run dev
    ```
 
-## Tech Stack
-
-- React
-- TypeScript
-- Tailwind CSS
-- Supabase (Authentication & Database)
-- Vite
-- React Router
-
-## Environment Variables
-
-The following environment variables are required:
-
-```env
-VITE_SUPABASE_URL=your_supabase_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-```
-
-## Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-
 ## Project Structure
 
 ```
 src/
-  ├── components/     # Reusable UI components
-  ├── pages/         # Page components
-  ├── stores/        # State management
-  ├── utils/         # Utility functions
-  ├── lib/           # External library configurations
-  └── routes/        # Route definitions
+├── components/         # Reusable UI components
+│   ├── auth/          # Authentication related components
+│   ├── layout/        # Layout components
+│   ├── stream/        # Stream related components
+│   └── ui/            # Base UI components (shadcn/ui)
+├── hooks/             # Custom React hooks
+├── lib/               # Utilities and type definitions
+├── pages/             # Page components
+│   ├── auth/          # Authentication pages
+│   ├── dashboard/     # Dashboard pages
+│   └── stream/        # Stream pages
+└── routes/            # Route configuration
 ```
+
+## Key Features
+
+### Authentication
+- Email/Password authentication
+- Protected routes
+- User profile management
+
+### Streaming
+- Integration with YouTube and Twitch
+- Custom pricing options
+- Subscription plans
+- Stream scheduling
+
+### Dashboard
+- Stream analytics
+- Subscriber management
+- Revenue tracking
+- Settings management
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

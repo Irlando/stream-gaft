@@ -1,23 +1,13 @@
-import React from 'react';
-import { Layout } from './components/layout/Layout';
-import { Card } from './components/ui/Card';
-import { Typography } from './components/ui/Typography';
-import { Section } from './components/ui/Section';
+import { RouterProvider } from 'react-router-dom';
+import { Toaster } from '@/components/ui/toaster';
+import { router } from './routes'
 
 function App() {
   return (
-    <Layout>
-      <Section>
-        <Card>
-          <Typography variant="h2" className="mb-4">
-            Welcome to MyApp
-          </Typography>
-          <Typography variant="p" className="text-gray-600">
-            Start building your application by editing the files in the src directory.
-          </Typography>
-        </Card>
-      </Section>
-    </Layout>
+    <>
+      <RouterProvider router={router} />
+      <Toaster />
+    </>
   );
 }
 
