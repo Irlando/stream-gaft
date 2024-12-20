@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
 import { Home } from '../pages/Home';
 import { Dashboard } from '../pages/Dashboard';
@@ -8,30 +8,40 @@ import { ProtectedRoute } from './ProtectedRoute';
 
 export const router = createBrowserRouter([
   {
-    path: '/',
     element: <Layout />,
     children: [
-      { index: true, element: <Home /> },
       { 
-        path: 'login',
-        element: <AuthPage />
+        path: '/', 
+        element: <Home />,
+        future: {
+          v7_startTransition: true
+        }
       },
       { 
-        path: 'auth',
-        element: <AuthPage />
+        path: '/auth', 
+        element: <AuthPage />,
+        future: {
+          v7_startTransition: true
+        }
       },
       {
-        path: 'dashboard',
-        element: <ProtectedRoute><Dashboard /></ProtectedRoute>
+        path: '/dashboard',
+        element: <ProtectedRoute><Dashboard /></ProtectedRoute>,
+        future: {
+          v7_startTransition: true
+        }
       },
       {
-        path: 'profile',
-        element: <ProtectedRoute><Profile /></ProtectedRoute>
-      },
-      {
-        path: '*',
-        element: <Navigate to="/" replace />
+        path: '/profile',
+        element: <ProtectedRoute><Profile /></ProtectedRoute>,
+        future: {
+          v7_startTransition: true
+        }
       }
     ]
   }
-]);
+], {
+  future: {
+    v7_startTransition: true
+  }
+});

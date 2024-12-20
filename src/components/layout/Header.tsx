@@ -1,20 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, User, LogOut } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Menu, User, LogOut, Tv } from 'lucide-react';
 import { Container } from '../ui/Container';
 import { Button } from '../ui/Button';
 import { useAuthStore } from '../../stores/authStore';
 
 export function Header() {
   const { user, signOut } = useAuthStore();
+  const navigate = useNavigate();
+
+  const handleSignOut = async () => {
+    await signOut();
+    navigate('/');
+  };
 
   return (
     <header className="bg-white shadow-sm">
       <Container>
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center space-x-8">
-            <Link to="/" className="text-xl font-bold text-gray-900">
-              MyApp
+            <Link to="/" className="flex items-center space-x-2 text-xl font-bold text-gray-900">
+              <Tv className="h-6 w-6 text-blue-600" />
+              <span>S-Gaft</span>
             </Link>
             <nav className="hidden md:flex space-x-4">
               <Link to="/" className="text-gray-600 hover:text-gray-900">
@@ -36,7 +43,7 @@ export function Header() {
                     <User className="h-5 w-5" />
                   </Button>
                 </Link>
-                <Button variant="ghost" size="sm" onClick={() => signOut()}>
+                <Button variant="ghost" size="sm" onClick={handleSignOut}>
                   <LogOut className="h-5 w-5" />
                 </Button>
               </>

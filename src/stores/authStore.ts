@@ -19,20 +19,26 @@ interface AuthState {
 
 export const useAuthStore = create<AuthState>((set, get) => ({
   user: null,
-  loading: true,
+  loading: false,
   signIn: async (email: string, password: string) => {
-    const { error } = await supabase.auth.signInWithPassword({ 
+    const { data, error } = await supabase.auth.signInWithPassword({ 
       email: email.toLowerCase(), 
       password 
     });
     if (error) throw error;
+    if (data.user) {
+      set({ user: data.user });
+    }
   },
   signUp: async (email: string, password: string) => {
-    const { error } = await supabase.auth.signUp({ 
+    const { data, error } = await supabase.auth.signUp({ 
       email: email.toLowerCase(), 
       password 
     });
     if (error) throw error;
+    if (data.user) {
+      set({ user: data.user });
+    }
   },
   signOut: async () => {
     const { error } = await supabase.auth.signOut();
