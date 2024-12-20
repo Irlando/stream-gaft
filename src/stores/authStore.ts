@@ -14,17 +14,24 @@ interface AuthState {
   signIn: (email: string, password: string) => Promise<void>;
   signUp: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
+  isDemo: () => boolean;
 }
 
-export const useAuthStore = create<AuthState>((set) => ({
+export const useAuthStore = create<AuthState>((set, get) => ({
   user: null,
   loading: true,
   signIn: async (email: string, password: string) => {
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    const { error } = await supabase.auth.signInWithPassword({ 
+      email: email.toLowerCase(), 
+      password 
+    });
     if (error) throw error;
   },
   signUp: async (email: string, password: string) => {
-    const { error } = await supabase.auth.signUp({ email, password });
+    const { error } = await supabase.auth.signUp({ 
+      email: email.toLowerCase(), 
+      password 
+    });
     if (error) throw error;
   },
   signOut: async () => {
@@ -32,4 +39,8 @@ export const useAuthStore = create<AuthState>((set) => ({
     if (error) throw error;
     set({ user: null });
   },
+  isDemo: () => {
+    const { user } = get();
+    return user?.email === 'demo@gaft.cv';
+  }
 }));

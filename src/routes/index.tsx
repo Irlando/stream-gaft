@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
 import { Home } from '../pages/Home';
 import { Dashboard } from '../pages/Dashboard';
@@ -9,26 +9,29 @@ import { ProtectedRoute } from './ProtectedRoute';
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout children={undefined} />,
+    element: <Layout />,
     children: [
       { index: true, element: <Home /> },
-      { path: 'auth', element: <AuthPage /> },
+      { 
+        path: 'login',
+        element: <AuthPage />
+      },
+      { 
+        path: 'auth',
+        element: <AuthPage />
+      },
       {
         path: 'dashboard',
-        element: (
-          <ProtectedRoute>
-            <Dashboard />
-          </ProtectedRoute>
-        ),
+        element: <ProtectedRoute><Dashboard /></ProtectedRoute>
       },
       {
         path: 'profile',
-        element: (
-          <ProtectedRoute>
-            <Profile />
-          </ProtectedRoute>
-        ),
+        element: <ProtectedRoute><Profile /></ProtectedRoute>
       },
-    ],
-  },
+      {
+        path: '*',
+        element: <Navigate to="/" replace />
+      }
+    ]
+  }
 ]);

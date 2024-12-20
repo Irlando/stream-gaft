@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../../stores/authStore';
 import { Card } from '../ui/Card';
 import { Typography } from '../ui/Typography';
@@ -8,18 +9,24 @@ export function AuthForm() {
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
   const { signIn, signUp } = useAuthStore();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError('');
+    
     try {
       if (isLogin) {
         await signIn(email, password);
+        navigate('/dashboard');
       } else {
         await signUp(email, password);
+        navigate('/dashboard');
       }
     } catch (error) {
-      console.error('Authentication error:', error);
+      setError('Authentication failed. Please check your credentials.');
     }
   };
 
@@ -49,13 +56,18 @@ export function AuthForm() {
             required
           />
         </div>
+        {error && (
+          <Typography variant="p" className="text-red-600">
+            {error}
+          </Typography>
+        )}
         <Button type="submit" className="w-full">
           {isLogin ? 'Sign In' : 'Sign Up'}
         </Button>
       </form>
       <button
         onClick={() => setIsLogin(!isLogin)}
-        className="mt-4 text-sm text-blue-600 hover:text-blue-500"
+        className="mt-4 text-sm text-blue-600 hover:text-blue-500 w-full text-center"
       >
         {isLogin ? 'Need an account? Sign up' : 'Already have an account? Sign in'}
       </button>

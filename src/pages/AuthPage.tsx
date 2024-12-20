@@ -1,9 +1,11 @@
 import React from 'react';
+import { Section } from '../components/ui/Section';
+import { AuthForm } from '../components/auth/AuthForm';
 
-export const AuthPage = () => {
+export function AuthPage() {
   return (
-    <div>
-      <h1>Welcome to the Home Page</h1>
-    </div>
+    <Section>
+      <AuthForm />
+    </Section>
   );
-};
+}
