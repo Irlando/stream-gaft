@@ -3,7 +3,7 @@ import { supabase } from '../lib/supabase';
 
 interface User {
   id: string;
-  email: string;
+  email?: string;
   name?: string;
   avatar_url?: string;
 }
@@ -27,7 +27,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     });
     if (error) throw error;
     if (data.user) {
-      set({ user: data.user });
+      set({ user: { ...data.user, email: data.user.email || '' } });
     }
   },
   signUp: async (email: string, password: string) => {
@@ -37,7 +37,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     });
     if (error) throw error;
     if (data.user) {
-      set({ user: data.user });
+      set({ user: { ...data.user, email: data.user.email || '' } });
     }
   },
   signOut: async () => {
