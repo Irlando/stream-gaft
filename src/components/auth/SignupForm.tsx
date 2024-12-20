@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../../stores/authStore';
-import { Button } from '../ui/Button';
+import { Button } from '../ui/button';
 import { Typography } from '../ui/Typography';
 import { Input } from '../ui/Input';
 

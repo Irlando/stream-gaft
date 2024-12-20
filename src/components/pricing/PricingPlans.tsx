@@ -1,7 +1,7 @@
 import React from 'react';
-import { Card } from '../ui/Card';
+import { Card } from '../ui/card';
 import { Typography } from '../ui/Typography';
-import { Button } from '../ui/Button';
+import { Button } from '../ui/button';
 import { Check } from 'lucide-react';
 
 const plans = [

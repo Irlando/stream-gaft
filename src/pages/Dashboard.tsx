@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Section } from '../components/ui/Section';
-import { Card } from '../components/ui/Card';
+import { Card } from '../components/ui/card';
 import { Typography } from '../components/ui/Typography';
-import { Button } from '../components/ui/Button';
+import { Button } from '../components/ui/button';
 import { CreateStreamForm } from '../components/streams/CreateStreamForm';
 import { StreamList } from '../components/streams/StreamList';
 

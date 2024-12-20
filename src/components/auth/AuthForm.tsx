@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../../stores/authStore';
-import { Card } from '../ui/Card';
+import { Card } from '../ui/card';
 import { Typography } from '../ui/Typography';
-import { Button } from '../ui/Button';
+import { Button } from '../ui/button';
 
 export function AuthForm() {
   const [isLogin, setIsLogin] = useState(true);

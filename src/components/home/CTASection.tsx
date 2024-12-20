@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography } from '../ui/Typography';
-import { Button } from '../ui/Button';
+import { Button } from '../ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 

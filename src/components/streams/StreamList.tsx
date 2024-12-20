@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../../lib/supabase';
-import { Card } from '../ui/Card';
+import { Card } from '../ui/card';
 import { Typography } from '../ui/Typography';
-import { Button } from '../ui/Button';
+import { Button } from '../ui/button';
 import { useAuthStore } from '../../stores/authStore';
 
 interface Stream {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Menu, User, LogOut, Tv } from 'lucide-react';
 import { Container } from '../ui/Container';
-import { Button } from '../ui/Button';
+import { Button } from '../ui/button';
 import { useAuthStore } from '../../stores/authStore';
 
 export function Header() {

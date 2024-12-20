@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Section } from '../components/ui/Section';
-import { Card } from '../components/ui/Card';
+import { Card } from '../components/ui/card';
 import { Typography } from '../components/ui/Typography';
 import { LoginForm } from '../components/auth/LoginForm';
 import { SignupForm } from '../components/auth/SignupForm';
