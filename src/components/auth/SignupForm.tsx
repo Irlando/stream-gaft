@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../../stores/authStore';
 import { Button } from '../ui/button';
 import { Typography } from '../ui/Typography';
-import { Input } from '../ui/Input';
+import { Input } from '../ui/input';
 
 export function SignupForm() {
   const [email, setEmail] = useState('');
@@ -28,7 +28,7 @@ export function SignupForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
         <Input
-          label="Email"
+          name="Email"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -38,7 +38,7 @@ export function SignupForm() {
       </div>
       <div>
         <Input
-          label="Password"
+          name="Password"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
