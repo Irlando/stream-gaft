@@ -1,43 +1,40 @@
-import React from 'react';
-import { Typography } from '../ui/Typography';
-import { Globe, Shield, DollarSign, Users } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Sparkles, Users, Shield, Zap } from 'lucide-react';
 
 const features = [
   {
-    icon: Globe,
-    title: 'Global Reach',
-    description: 'Stream to viewers worldwide with regional access controls',
-  },
-  {
-    icon: Shield,
-    title: 'Secure Access',
-    description: 'Control who can view your content with subscriber-only streams',
-  },
-  {
-    icon: DollarSign,
-    title: 'Flexible Pricing',
-    description: 'Set your own prices and monetize your content',
+    icon: Sparkles,
+    title: 'High Quality Streaming',
+    description: 'Stream in HD or 4K quality with minimal latency',
   },
   {
     icon: Users,
-    title: 'Community',
-    description: 'Build and engage with your audience',
+    title: 'Growing Community',
+    description: 'Connect with viewers and other content creators',
+  },
+  {
+    icon: Shield,
+    title: 'Secure Platform',
+    description: 'Your content and data are always protected',
+  },
+  {
+    icon: Zap,
+    title: 'Fast Performance',
+    description: 'Optimized for speed and reliability',
   },
 ];
 
 export function Features() {
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {features.map((feature) => (
-        <div key={feature.title} className="text-center">
-          <div className="inline-flex p-3 rounded-full bg-blue-100 mb-4">
-            <feature.icon className="h-6 w-6 text-blue-600" />
-          </div>
-          <Typography variant="h3" className="mb-2">{feature.title}</Typography>
-          <Typography variant="p" className="text-gray-600">
-            {feature.description}
-          </Typography>
-        </div>
+        <Card key={feature.title}>
+          <CardContent className="pt-6">
+            <feature.icon className="h-12 w-12 text-primary mb-4" />
+            <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
+            <p className="text-muted-foreground">{feature.description}</p>
+          </CardContent>
+        </Card>
       ))}
     </div>
   );

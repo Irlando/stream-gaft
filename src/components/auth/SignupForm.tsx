@@ -1,58 +1,55 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuthStore } from '../../stores/authStore';
-import { Button } from '../ui/button';
-import { Typography } from '../ui/Typography';
-import { Input } from '../ui/input';
+import { useState, type ChangeEvent } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
-export function SignupForm() {
+interface SignupFormProps {
+  onSubmit: (email: string, password: string) => void;
+}
+
+export function SignupForm({ onSubmit }: SignupFormProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const navigate = useNavigate();
-  const { signUp } = useAuthStore();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
-    
-    try {
-      await signUp(email, password);
-      navigate('/dashboard');
-    } catch (error) {
-      setError('Failed to create account');
-    }
+    onSubmit(email, password);
+  };
+
+  const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
+      <div className="space-y-2">
+        <Label htmlFor="email">Email</Label>
         <Input
-          name="Email"
+          id="email"
           type="email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="your@email.com"
+          onChange={handleEmailChange}
+          placeholder="Enter your email"
           required
         />
       </div>
-      <div>
+      <div className="space-y-2">
+        <Label htmlFor="password">Password</Label>
         <Input
-          name="Password"
+          id="password"
           type="password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="••••••••"
+          onChange={handlePasswordChange}
+          placeholder="Enter your password"
           required
         />
       </div>
-      {error && (
-        <Typography variant="p" className="text-red-600 text-sm">
-          {error}
-        </Typography>
-      )}
       <Button type="submit" className="w-full">
-        Create Account
+        Sign Up
       </Button>
     </form>
   );

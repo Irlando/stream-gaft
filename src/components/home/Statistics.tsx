@@ -1,45 +1,39 @@
-import React from 'react';
-import { Typography } from '../ui/Typography';
-import { Users, Globe2, DollarSign, Play } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Users, Video, DollarSign } from 'lucide-react';
 
 const stats = [
   {
+    label: 'Active Users',
+    value: '10,000+',
     icon: Users,
-    value: '10K+',
-    label: 'Active Creators',
+    description: 'Content creators and viewers',
   },
   {
-    icon: Globe2,
-    value: '150+',
-    label: 'Countries',
+    label: 'Live Streams',
+    value: '500+',
+    icon: Video,
+    description: 'Daily active streams',
   },
   {
+    label: 'Revenue Generated',
+    value: '$1M+',
     icon: DollarSign,
-    value: '$2M+',
-    label: 'Creator Earnings',
+    description: 'For content creators',
   },
-  {
-    icon: Play,
-    value: '100K+',
-    label: 'Monthly Streams',
-  },
-];
+] as const;
 
 export function Statistics() {
   return (
-    <div className="grid md:grid-cols-4 gap-8">
-      {stats.map((stat) => (
-        <div key={stat.label} className="text-center">
-          <div className="inline-flex p-4 rounded-full bg-blue-100 mb-4">
-            <stat.icon className="h-8 w-8 text-blue-600" />
-          </div>
-          <Typography variant="h2" className="text-4xl font-bold mb-2">
-            {stat.value}
-          </Typography>
-          <Typography variant="p" className="text-gray-600">
-            {stat.label}
-          </Typography>
-        </div>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {stats.map(({ label, value, icon: Icon, description }) => (
+        <Card key={label}>
+          <CardContent className="pt-6">
+            <Icon className="h-8 w-8 text-primary mb-4" />
+            <h3 className="text-2xl font-bold">{value}</h3>
+            <p className="text-lg font-medium">{label}</p>
+            <p className="text-sm text-muted-foreground">{description}</p>
+          </CardContent>
+        </Card>
       ))}
     </div>
   );

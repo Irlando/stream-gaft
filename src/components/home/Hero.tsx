@@ -1,60 +1,34 @@
-import React from 'react';
-import { Typography } from '../ui/Typography';
-import { Button } from '../ui/button';
-import { Play, Tv } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Tv } from 'lucide-react';
 
 export function Hero() {
+  const TvIcon = <Tv className="h-12 w-12 text-primary animate-pulse" />;
+  
   return (
-    <div className="max-w-6xl mx-auto px-4">
-      <div className="grid lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-8">
-          <div className="space-y-4">
-            <Typography variant="h1" className="text-5xl lg:text-6xl font-bold">
-              Transform Your Content Into a Global Business
-            </Typography>
-            <Typography variant="p" className="text-xl text-blue-100 leading-relaxed">
-              Join thousands of creators who are monetizing their content and building 
-              sustainable businesses through our platform.
-            </Typography>
+    <div className="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-primary/5 via-primary/10 to-primary/5">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-grid-white/10 bg-[size:40px_40px] [mask-image:radial-gradient(white,transparent_85%)]" />
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center max-w-4xl mx-auto">
+          <div className="flex items-center justify-center mb-6">
+            {TvIcon}
           </div>
-          
-          <div className="flex flex-wrap gap-4">
-            <Link to="/auth">
-              <Button size="lg" className="bg-white text-blue-900 hover:bg-blue-50">
-                <Play className="h-5 w-5 mr-2" />
-                Start Streaming
-              </Button>
-            </Link>
-            <Button size="lg" variant="ghost" className="text-white border-2 border-white">
-              View Demo
+          <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60 mb-6">
+            Stream Your Way to Success
+          </h1>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Create, share, and monetize your content with our powerful streaming platform.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="text-lg px-8">
+              Start Streaming
+            </Button>
+            <Button size="lg" variant="outline" className="text-lg px-8">
+              Learn More
             </Button>
           </div>
-
-          <div className="flex items-center gap-6 text-blue-100">
-            <div className="flex -space-x-4">
-              {[1, 2, 3, 4].map((i) => (
-                <img
-                  key={i}
-                  src={`https://source.unsplash.com/random/100x100?face&${i}`}
-                  alt="Creator"
-                  className="w-10 h-10 rounded-full border-2 border-white"
-                />
-              ))}
-            </div>
-            <p>Join 10,000+ creators worldwide</p>
-          </div>
-        </div>
-
-        <div className="relative">
-          <div className="relative z-10 rounded-lg overflow-hidden shadow-2xl">
-            <img
-              src="https://source.unsplash.com/random/800x600?streaming"
-              alt="Streaming Setup"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="absolute inset-0 bg-blue-500 opacity-20 transform rotate-6 rounded-lg"></div>
         </div>
       </div>
     </div>

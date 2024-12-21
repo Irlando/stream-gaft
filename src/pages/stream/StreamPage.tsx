@@ -2,22 +2,26 @@ import { useParams } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { getYouTubeEmbedUrl, getTwitchEmbedUrl, formatCurrency } from '@/lib/utils';
+import type { Stream } from '@/lib/types/stream';
 
 // Demo stream data
-const DEMO_STREAM = {
+const DEMO_STREAM: Stream = {
   id: '1',
   title: 'Demo Stream',
   description: 'This is a demo stream showing YouTube/Twitch integration.',
-  platform: 'youtube' as const,
+  platform: 'youtube',
   platform_stream_id: 'dQw4w9WgXcQ',
   price: 9.99,
-  status: 'live' as const,
+  status: 'live',
   viewer_count: 123,
+  creator_id: '1',
+  thumbnail_url: '',
+  created_at: new Date().toISOString(),
 };
 
 export function StreamPage() {
-  const { id } = useParams();
-  const stream = DEMO_STREAM; // In real app, fetch stream by ID
+  const { id } = useParams<{ id: string }>();
+  const stream = DEMO_STREAM; // In real app, fetch stream by ID using the id parameter
 
   const embedUrl = stream.platform === 'youtube'
     ? getYouTubeEmbedUrl(stream.platform_stream_id)

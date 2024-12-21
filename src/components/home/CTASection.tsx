@@ -1,27 +1,22 @@
-import React from 'react';
-import { Typography } from '../ui/Typography';
-import { Button } from '../ui/button';
-import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 
 export function CTASection() {
   return (
-    <div className="text-center max-w-3xl mx-auto">
-      <Typography variant="h2" className="text-4xl font-bold mb-6">
-        Ready to Start Your Streaming Journey?
-      </Typography>
-      <Typography variant="p" className="text-xl text-blue-100 mb-8">
-        Join thousands of successful creators who are building their dreams with our platform.
-      </Typography>
-      <Link to="/auth">
-        <Button 
-          size="lg" 
-          className="bg-white text-blue-900 hover:bg-blue-50 inline-flex items-center"
-        >
-          Get Started Now
-          <ArrowRight className="ml-2 h-5 w-5" />
-        </Button>
-      </Link>
-    </div>
+    <section className="py-24 bg-primary/5">
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="text-4xl font-bold mb-6">Ready to Start Streaming?</h2>
+        <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          Join thousands of content creators who are already using our platform to reach their audience.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button size="lg" className="text-lg px-8">
+            Get Started
+          </Button>
+          <Button size="lg" variant="outline" className="text-lg px-8">
+            Learn More
+          </Button>
+        </div>
+      </div>
+    </section>
   );
 }

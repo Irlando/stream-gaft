@@ -1,7 +1,7 @@
+import { useState, type ChangeEvent } from 'react';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
-import { useState } from 'react';
 
 interface PricingOptionsProps {
   onPriceChange: (price: number) => void;
@@ -10,6 +10,10 @@ interface PricingOptionsProps {
 
 export function PricingOptions({ onPriceChange, onPricingTypeChange }: PricingOptionsProps) {
   const [pricingType, setPricingType] = useState<'one-time' | 'subscription'>('one-time');
+
+  const handlePriceChange = (e: ChangeEvent<HTMLInputElement>) => {
+    onPriceChange(Number(e.target.value));
+  };
 
   return (
     <div className="space-y-4">
@@ -43,7 +47,7 @@ export function PricingOptions({ onPriceChange, onPricingTypeChange }: PricingOp
             min="0"
             step="0.01"
             placeholder="0.00"
-            onChange={(e) => onPriceChange(Number(e.target.value))}
+            onChange={handlePriceChange}
           />
         </div>
       )}

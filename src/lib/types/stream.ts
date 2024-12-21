@@ -1,4 +1,5 @@
 export type StreamPlatform = 'youtube' | 'twitch';
+export type StreamStatus = 'live' | 'ended' | 'scheduled';
 
 export interface Stream {
   id: string;
@@ -6,10 +7,10 @@ export interface Stream {
   description: string;
   thumbnail_url: string;
   platform: StreamPlatform;
-  platform_stream_id: string; // YouTube video ID or Twitch stream ID
+  platform_stream_id: string;
   creator_id: string;
   price: number;
-  status: 'live' | 'ended' | 'scheduled';
+  status: StreamStatus;
   scheduled_for?: string;
   viewer_count: number;
   created_at: string;
