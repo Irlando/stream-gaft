@@ -1,5 +1,5 @@
 import { getYouTubeEmbedUrl, getTwitchEmbedUrl } from '@/lib/utils/stream';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/Card';
 import type { Stream } from '@/lib/types/stream';
 
 interface StreamPlayerProps {

@@ -1,5 +1,5 @@
 import { Sparkles, Users, Shield, Zap } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/Card';
 
 const features = [
   {

@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/Button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { StreamPlayer } from '@/components/stream/StreamPlayer';
 import { StreamInfo } from '@/components/stream/StreamInfo';
 import { useStreams } from '@/hooks/useStreams';

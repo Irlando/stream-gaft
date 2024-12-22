@@ -1,4 +1,4 @@
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/Card';
 import { Users, Video, DollarSign } from 'lucide-react';
 
 const stats = [

@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { Card } from '@/components/ui/card';
+import { Card } from '@/components/ui/Card';
 
 export function AuthLayout() {
   return (
