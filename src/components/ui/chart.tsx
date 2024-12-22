@@ -3,7 +3,7 @@ import * as RechartsPrimitive from "recharts";
 
 const Chart = RechartsPrimitive.ResponsiveContainer;
 
-type ChartProps = React.ComponentProps<typeof Chart>;
+//type ChartProps = React.ComponentProps<typeof Chart>;
 
 function CustomTooltip({ active, payload, label }: {
   active?: boolean;
@@ -41,50 +41,50 @@ function CustomTooltip({ active, payload, label }: {
 }
 
 const ChartArea = React.forwardRef<
-  SVGSVGElement,
+  SVGElement,
   React.ComponentProps<typeof RechartsPrimitive.Area>
->((props, ref) => (
-  <RechartsPrimitive.Area ref={ref} {...props} />
+>((props   ) => (
+  <RechartsPrimitive.Area {...props} />
 ));
 ChartArea.displayName = "ChartArea";
 
 const ChartBar = React.forwardRef<
-  SVGSVGElement,
+  SVGElement,
   React.ComponentProps<typeof RechartsPrimitive.Bar>
->((props, ref) => (
-  <RechartsPrimitive.Bar ref={ref} {...props} />
+>((props   ) => (
+  <RechartsPrimitive.Bar  {...props} />
 ));
 ChartBar.displayName = "ChartBar";
 
 const ChartLine = React.forwardRef<
-  SVGSVGElement,
+  SVGElement,
   React.ComponentProps<typeof RechartsPrimitive.Line>
->((props, ref) => (
-  <RechartsPrimitive.Line ref={ref} {...props} />
+>((props   ) => (
+  <RechartsPrimitive.Line   {...props} />
 ));
 ChartLine.displayName = "ChartLine";
 
 const ChartXAxis = React.forwardRef<
-  SVGSVGElement,
+  SVGElement,
   React.ComponentProps<typeof RechartsPrimitive.XAxis>
->((props, ref) => (
-  <RechartsPrimitive.XAxis ref={ref} {...props} />
+>((props   ) => (
+  <RechartsPrimitive.XAxis  {...props} />
 ));
 ChartXAxis.displayName = "ChartXAxis";
 
 const ChartYAxis = React.forwardRef<
-  SVGSVGElement,
+  SVGElement,
   React.ComponentProps<typeof RechartsPrimitive.YAxis>
->((props, ref) => (
-  <RechartsPrimitive.YAxis ref={ref} {...props} />
+>((props   ) => (
+  <RechartsPrimitive.YAxis   {...props} />
 ));
 ChartYAxis.displayName = "ChartYAxis";
 
 const ChartTooltip = React.forwardRef<
-  SVGSVGElement,
+  SVGElement,
   React.ComponentProps<typeof RechartsPrimitive.Tooltip>
->((props, ref) => (
-  <RechartsPrimitive.Tooltip ref={ref} content={<CustomTooltip />} {...props} />
+>((props   ) => (
+  <RechartsPrimitive.Tooltip  content={<CustomTooltip />} {...props} />
 ));
 ChartTooltip.displayName = "ChartTooltip";
 

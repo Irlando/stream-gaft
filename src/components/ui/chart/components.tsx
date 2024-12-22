@@ -15,32 +15,32 @@ import {
 } from 'recharts';
 import { CustomTooltip } from './CustomTooltip';
 
-export const ChartArea = React.forwardRef<SVGElement, AreaProps>((props, ref) => (
-  <Area ref={ref} {...props} />
+export const ChartArea = React.forwardRef<SVGElement, AreaProps>((props  ) => (
+  <Area  {...props} /> //ref={ref}
 ));
 ChartArea.displayName = 'ChartArea';
 
-export const ChartBar = React.forwardRef<SVGElement, BarProps>((props, ref) => (
-  <Bar ref={ref} {...props} />
+export const ChartBar = React.forwardRef<SVGElement, BarProps>((props  ) => (
+  <Bar  {...props} />
 ));
 ChartBar.displayName = 'ChartBar';
 
-export const ChartLine = React.forwardRef<SVGElement, LineProps>((props, ref) => (
-  <Line ref={ref} {...props} />
+export const ChartLine = React.forwardRef<SVGElement, LineProps>((props  ) => (
+  <Line {...props} />
 ));
 ChartLine.displayName = 'ChartLine';
 
-export const ChartXAxis = React.forwardRef<SVGElement, XAxisProps>((props, ref) => (
-  <XAxis ref={ref} {...props} />
+export const ChartXAxis = React.forwardRef<SVGElement, XAxisProps>((props) => (
+  <XAxis {...props} />
 ));
 ChartXAxis.displayName = 'ChartXAxis';
 
-export const ChartYAxis = React.forwardRef<SVGElement, YAxisProps>((props, ref) => (
-  <YAxis ref={ref} {...props} />
+export const ChartYAxis = React.forwardRef<SVGElement, YAxisProps>((props) => (
+  <YAxis {...props} />
 ));
 ChartYAxis.displayName = 'ChartYAxis';
 
-export const ChartTooltip = React.forwardRef<SVGElement, TooltipProps<any, any>>((props, ref) => (
-  <Tooltip ref={ref} content={<CustomTooltip />} {...props} />
+export const ChartTooltip = React.forwardRef<SVGElement, TooltipProps<any, any>>((props) => (
+  <Tooltip content={<CustomTooltip />} {...props} />
 ));
 ChartTooltip.displayName = 'ChartTooltip';

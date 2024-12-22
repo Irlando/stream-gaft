@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+//import { useParams } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { getYouTubeEmbedUrl, getTwitchEmbedUrl, formatCurrency } from '@/lib/utils';
@@ -20,7 +20,7 @@ const DEMO_STREAM: Stream = {
 };
 
 export function StreamPage() {
-  const { id } = useParams<{ id: string }>();
+  //const { id } = useParams<{ id: string }>();
   const stream = DEMO_STREAM; // In real app, fetch stream by ID using the id parameter
 
   const embedUrl = stream.platform === 'youtube'

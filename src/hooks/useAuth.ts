@@ -24,7 +24,7 @@ export const useAuth = create<AuthState>((set) => ({
     }
   },
 
-  register: async (email: string, password: string, username: string) => {
+  register: async (email: string, username: string) => {
     set({ isLoading: true, error: undefined });
     try {
       const newUser = createUserObject(email, username);
