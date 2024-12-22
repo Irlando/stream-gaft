@@ -1,7 +1,23 @@
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { NAVIGATION } from '@/lib/constants/navigation';
-import * as Icons from 'lucide-react';
+import { 
+  LayoutDashboard,
+  Video,
+  Users,
+  CreditCard,
+  Settings,
+  type LucideIcon 
+} from 'lucide-react';
+
+// Map of icon names to their components
+const IconMap: Record<string, LucideIcon> = {
+  LayoutDashboard,
+  Video,
+  Users,
+  CreditCard,
+  Settings,
+};
 
 export function DashboardNav() {
   const location = useLocation();
@@ -9,7 +25,7 @@ export function DashboardNav() {
   return (
     <nav className="space-y-1">
       {NAVIGATION.DASHBOARD.map(({ href, label, icon }) => {
-        const Icon = Icons[icon as keyof typeof Icons];
+        const Icon = IconMap[icon];
         return (
           <Link
             key={href}
