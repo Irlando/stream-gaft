@@ -1,7 +1,7 @@
 import { useState, type ChangeEvent } from 'react';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
-import { Input } from '@/components/ui/input';
+import { Input } from '@/components/ui/Input';
 
 interface PricingOptionsProps {
   onPriceChange: (price: number) => void;

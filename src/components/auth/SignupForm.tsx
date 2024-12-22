@@ -1,6 +1,6 @@
 import { useState, type ChangeEvent } from 'react';
 import { Button } from '@/components/ui/Button';
-import { Input } from '@/components/ui/input';
+import { Input } from '@/components/ui/Input';
 import { Label } from '@/components/ui/label';
 
 interface SignupFormProps {
