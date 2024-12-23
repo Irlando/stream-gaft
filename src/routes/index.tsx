@@ -3,6 +3,7 @@ import Layout from '@/components/layout/Layout';
 import { AuthLayout } from '@/components/layout/AuthLayout';
 import { DashboardLayout } from '@/pages/dashboard/DashboardLayout';
 import { HomePage } from '@/pages/HomePage';
+import { FeaturesPage } from '@/pages/features/FeaturesPage';
 import { LoginPage } from '@/pages/auth/LoginPage';
 import { RegisterPage } from '@/pages/auth/RegisterPage';
 import { DashboardPage } from '@/pages/dashboard/DashboardPage';
@@ -21,6 +22,7 @@ export const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { path: '/', element: <HomePage /> },
+      { path: '/features', element: <FeaturesPage /> },
       {
         element: <AuthLayout />,
         children: [

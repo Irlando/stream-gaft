@@ -1,34 +1,32 @@
-import { Tv } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 
 export function HeroSection() {
   return (
-    <div className="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-primary/5 via-primary/10 to-primary/5">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-grid-white/10 bg-[size:40px_40px] [mask-image:radial-gradient(white,transparent_85%)]" />
+    <div className="relative min-h-[80vh] sports-gradient overflow-hidden">
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-blue-600/30" />
+        <img 
+          src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80"
+          alt="Sports"
+          className="w-full h-full object-cover"
+        />
       </div>
       
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center max-w-4xl mx-auto">
-          <div className="flex items-center justify-center mb-6">
-            <Tv className="h-12 w-12 text-primary animate-pulse" />
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60 mb-6">
-            Exclusive Livestreams Just for You
+      <div className="relative container mx-auto px-4 py-24">
+        <div className="max-w-3xl">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+            Your Gateway to Sports Excellence
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join thousands of viewers enjoying premium content from top creators. Stream exclusive live events, interact with your favorite hosts, and be part of our growing community.
+          <p className="text-xl md:text-2xl text-blue-100 mb-8">
+            Watch live sports events, follow your favorite teams, and join a community of passionate sports fans.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8">
-              Start Watching Now
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button size="lg" className="bg-blue-500 hover:bg-blue-600">
+              Watch Live
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8">
-              View Plans
+            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10">
+              Explore Events
             </Button>
-          </div>
-          <div className="mt-12 text-sm text-muted-foreground">
-            🔥 Special Launch Offer: Save 20% on annual plans
           </div>
         </div>
       </div>
