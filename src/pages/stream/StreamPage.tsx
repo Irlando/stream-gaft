@@ -10,7 +10,7 @@ const DEMO_STREAM: Stream = {
   title: 'Demo Stream',
   description: 'This is a demo stream showing YouTube/Twitch integration.',
   platform: 'youtube',
-  platform_stream_id: 'dQw4w9WgXcQ',
+  platform_stream_id: 'cgE2lPVXsOc',
   price: 9.99,
   status: 'live',
   viewer_count: 123,
