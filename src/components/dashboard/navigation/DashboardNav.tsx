@@ -4,6 +4,7 @@ import { NAVIGATION } from '@/lib/constants/navigation';
 import { 
   LayoutDashboard,
   Video,
+  PlaySquare,
   Users,
   CreditCard,
   Settings,
@@ -14,6 +15,7 @@ import {
 const IconMap: Record<string, LucideIcon> = {
   LayoutDashboard,
   Video,
+  PlaySquare,
   Users,
   CreditCard,
   Settings,
