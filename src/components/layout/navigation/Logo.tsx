@@ -5,7 +5,7 @@ export function Logo() {
   return (
     <Link to="/" className="flex items-center space-x-2">
       <Tv className="h-6 w-6" />
-      <span className="font-bold">LiveStream</span>
+      <span className="font-bold">GaftSport-LS</span>
     </Link>
   );
 }
