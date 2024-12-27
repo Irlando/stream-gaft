@@ -4,29 +4,33 @@
 
 @layer base {
   :root {
-    --background: 219 47% 23%;
+    --background: 222 47% 11%;
     --foreground: 0 0% 98%;
-    --card: 219 47% 28%;
+    --card: 217 33% 17%;
     --card-foreground: 0 0% 98%;
-    --popover: 219 47% 23%;
+    --popover: 222 47% 11%;
     --popover-foreground: 0 0% 98%;
-    --primary: 214 84% 56%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 212 96% 78%;
+    --primary-foreground: 222 47% 11%;
     --secondary: 217 33% 17%;
     --secondary-foreground: 0 0% 98%;
     --muted: 217 33% 17%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 214 84% 56%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 212 96% 78%;
+    --accent-foreground: 222 47% 11%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 217 33% 17%;
     --input: 217 33% 17%;
-    --ring: 214 84% 56%;
-    --radius: 0.5rem;
+    --ring: 212 96% 78%;
+    --radius: 1rem;
   }
 }
 
-.sports-gradient {
-  background: linear-gradient(135deg, hsl(219, 47%, 23%) 0%, hsl(219, 47%, 28%) 100%);
+.dashboard-gradient {
+  background: linear-gradient(to bottom right, hsl(222 47% 11%), hsl(222 47% 14%));
+}
+
+.card-gradient {
+  background: linear-gradient(to bottom right, hsl(217 33% 17%), hsl(217 33% 20%));
 }
