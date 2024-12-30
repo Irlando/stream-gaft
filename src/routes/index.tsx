@@ -1,4 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
+import Layout from '@/components/layout/Layout';
 import { AuthLayout } from '@/components/layout/AuthLayout';
 import { DashboardLayout } from '@/pages/dashboard/DashboardLayout';
 import { HomePage } from '@/pages/HomePage';
@@ -15,14 +16,12 @@ import { StreamPage } from '@/pages/stream/StreamPage';
 import { ProfilePage } from '@/pages/profile/ProfilePage';
 import { SubscriptionsPage } from '@/pages/subscriptions/SubscriptionsPage';
 import { ProtectedRoute } from '@/components/auth/ProtectedRoute';
-import { Navbar } from '@/components/layout/Navbar';
 
 export const router = createBrowserRouter([
   {
-    path: '/',
-    element: <Navbar />,
+    element: <Layout />,
     children: [
-      { index: true, element: <HomePage /> },
+      { path: '/', element: <HomePage /> },
       { path: 'features', element: <FeaturesPage /> },
     ],
   },
